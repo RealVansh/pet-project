@@ -27,24 +27,24 @@ export default function ServicesPage() {
     },
     {
       num: '03',
+      title: 'Pet Sales',
+      desc: 'Thoughtfully sourced puppies with a transparent acquisition and handover process.',
+      icon: Heart,
+      href: '/puppies',
+    },
+    {
+      num: '04',
       title: 'Pet Walking',
       desc: 'Reliable, energetic walks ensuring your pet stays active and healthy.',
       icon: Footprints,
       href: '/services/walking',
     },
     {
-      num: '04',
+      num: '05',
       title: 'Stud Services',
       desc: 'Connect with top-tier pedigrees for responsible and healthy breeding.',
       icon: Dog,
       href: '/services/stud',
-    },
-    {
-      num: '05',
-      title: 'Pet Sales',
-      desc: 'Thoughtfully sourced puppies with a transparent acquisition and handover process.',
-      icon: Heart,
-      href: '/puppies',
     },
   ];
 

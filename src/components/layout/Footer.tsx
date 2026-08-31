@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { getWhatsAppLink } from "@/lib/utils";
 import { ArrowRight } from "lucide-react";
 
@@ -26,11 +27,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-20">
           {/* Brand */}
           <div className="md:col-span-5">
-            <Link href="/" className="flex items-center gap-2 mb-6">
-              <span className="font-heading text-2xl font-bold text-white tracking-tight">
-                The Fur Stylist
-              </span>
-              <span className="w-1.5 h-1.5 rounded-full bg-brass-500"></span>
+            <Link href="/" className="inline-block mb-6 group">
+              <Image 
+                src="/logo backgroundless.png" 
+                alt="The Fur Stylist" 
+                width={140} 
+                height={40} 
+                className="h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+              />
             </Link>
             <p className="text-taupe-500 text-base leading-relaxed mb-8 max-w-md font-light">
               Exceptional care for your best friend. Professional grooming, training, and pet care delivered by an experienced team with over 5 years of dedication.

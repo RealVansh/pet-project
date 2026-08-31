@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { AnimatedSection } from '@/components/ui/AnimatedSection';
 import { CheckCircle2, Heart, Shield, Star } from 'lucide-react';
 import { getWhatsAppLink } from '@/lib/utils';
+import CertificateGallery from '@/components/ui/CertificateGallery';
 
 export const metadata: Metadata = {
   title: 'About Us | Premium Pet Care Services',
@@ -85,8 +86,27 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Master Trainer Section */}
+      <section className="py-24 bg-oatmeal border-t border-b border-taupe-200">
+        <div className="max-w-7xl mx-auto px-6">
+          <AnimatedSection className="text-center mb-16">
+            <p className="text-brass-500 text-sm font-medium tracking-[0.2em] uppercase mb-4">The Expert Behind The Care</p>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-forest-900 mb-6 font-heading">
+              Meet Master Trainer <span className="text-brass-500">Naveen Kumar</span>
+            </h2>
+            <div className="w-16 h-px bg-brass-400 mx-auto mb-8"></div>
+            <p className="text-xl leading-relaxed text-taupe-600 max-w-3xl mx-auto">
+              With over 5 years of dedicated expertise in canine behavior, obedience, and KCI standards, Naveen leads our training and care programs. His commitment to continuing education ensures your pet receives the highest standard of professional handling.
+            </p>
+          </AnimatedSection>
+
+          {/* Certification Gallery */}
+          <CertificateGallery />
+        </div>
+      </section>
+
       {/* CTA */}
-      <AnimatedSection className="py-24 lg:py-32 bg-forest-900 text-center px-6">
+      <AnimatedSection className="py-16 lg:py-24 bg-forest-900 text-center px-6">
         <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 font-heading">
           Ready to Experience the <span className="text-brass-400">Difference?</span>
         </h2>

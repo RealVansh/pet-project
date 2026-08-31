@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X, Phone, ArrowRight } from "lucide-react";
 import { getWhatsAppLink, cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
@@ -47,14 +48,15 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-3 group">
-          <span className={cn(
-            "font-heading text-xl font-bold tracking-tight transition-colors duration-300",
-            isDark ? "text-white" : "text-forest-900"
-          )}>
-            The Fur Stylist
-          </span>
-          <span className="w-1.5 h-1.5 rounded-full bg-brass-500 group-hover:scale-150 transition-transform duration-300"></span>
+        <Link href="/" className="flex items-center group">
+          <Image 
+            src="/logo backgroundless.png" 
+            alt="The Fur Stylist" 
+            width={120} 
+            height={32} 
+            className="h-8 md:h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+            priority
+          />
         </Link>
 
         {/* Desktop Nav */}

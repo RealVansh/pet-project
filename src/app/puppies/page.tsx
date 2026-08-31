@@ -1,11 +1,11 @@
 import { Metadata } from "next";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { getWhatsAppLink } from "@/lib/utils";
-import { Search, ShieldCheck, Stethoscope, Handshake, HeartHandshake, ArrowRight } from "lucide-react";
+import { Search, ShieldCheck, Stethoscope, Handshake, HeartHandshake, ArrowRight, Info } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Pet Sales | How We Source & Deliver Puppies | The Fur Stylist",
-  description: "Learn about our transparent, trust-first process for sourcing healthy puppies and ensuring a smooth handover to your family.",
+  title: "Pet Sales | Available Breeds | The Fur Stylist",
+  description: "Discover our currently available healthy puppies. We ensure a transparent, trust-first process from sourcing to handover.",
 };
 
 const steps = [
@@ -14,7 +14,6 @@ const steps = [
     icon: Search,
     title: "Sourcing & Selection",
     description: "We carefully identify and evaluate breeders based on their practices, environment, and the health history of their dogs. We do not work with puppy mills or mass breeders.",
-    // Client can update this with their specific sourcing details
   },
   {
     num: "02",
@@ -42,14 +41,19 @@ const steps = [
   },
 ];
 
-const breeds = ["Labrador Retriever", "Golden Retriever", "German Shepherd"];
+const breeds = [
+  { name: "Labrador Retriever", trait: "Friendly & Loyal" },
+  { name: "Golden Retriever", trait: "Intelligent & Gentle" },
+  { name: "German Shepherd", trait: "Protective & Alert" }
+];
 
 export default function PuppiesPage() {
   return (
     <main className="min-h-screen bg-pearl">
       {/* Page Hero Banner */}
-      <section className="bg-forest-900 pt-32 pb-16 lg:pt-40 lg:pb-20">
-        <div className="max-w-7xl mx-auto px-6 text-center">
+      <section className="bg-forest-900 pt-32 pb-16 lg:pt-40 lg:pb-20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-noise opacity-30"></div>
+        <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
           <p className="text-brass-500 text-sm font-medium tracking-[0.2em] uppercase mb-4">Pet Sales</p>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
             Bringing Home a <span className="text-brass-500">New Best Friend</span>
@@ -60,10 +64,51 @@ export default function PuppiesPage() {
         </div>
       </section>
 
-      {/* Intro */}
-      <AnimatedSection className="py-24 lg:py-32 bg-white">
+      {/* Available Breeds (Moved to Top) */}
+      <section className="py-24 bg-oatmeal border-b border-taupe-200">
+        <div className="max-w-7xl mx-auto px-6">
+          <AnimatedSection className="text-center mb-16">
+            <p className="text-brass-500 text-sm font-medium tracking-[0.2em] uppercase mb-4">Breeds We Work With</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-forest-900 mb-6 font-heading">
+              Currently Available <span className="text-brass-500">Breeds</span>
+            </h2>
+            <p className="text-taupe-600 text-lg max-w-2xl mx-auto mb-8">
+              We specialize in sourcing healthy, well-socialized puppies from trusted bloodlines.
+            </p>
+            
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-sage-50 text-forest-900 rounded-full border border-sage-300 font-medium text-sm">
+              <Info className="w-4 h-4 text-brass-600" />
+              Availability changes frequently. Contact us to check current availability.
+            </div>
+          </AnimatedSection>
+
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {breeds.map((breed, idx) => (
+              <AnimatedSection key={breed.name} delay={idx * 100} className="bg-white rounded-3xl p-8 border border-taupe-200 shadow-sm hover:shadow-lg hover:border-brass-400 transition-all text-center group">
+                {/* Visual Placeholder for Image */}
+                <div className="w-full aspect-square bg-sage-50 rounded-2xl mb-6 flex items-center justify-center border border-taupe-200 group-hover:border-brass-300 transition-colors overflow-hidden">
+                  <span className="text-taupe-400 text-sm font-medium">Image Placeholder</span>
+                </div>
+                <h3 className="text-2xl font-bold text-forest-900 mb-2 font-heading">{breed.name}</h3>
+                <p className="text-brass-600 font-medium text-sm tracking-wider uppercase mb-6">{breed.trait}</p>
+                <a 
+                  href={getWhatsAppLink(`Hello! I'm interested in getting a ${breed.name} puppy. Could you tell me about current availability?`)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block w-full py-3 px-6 text-sm font-semibold uppercase tracking-wider text-forest-900 border-2 border-forest-900 hover:bg-forest-900 hover:text-white rounded-full transition-colors"
+                >
+                  Check Availability
+                </a>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Intro to Process */}
+      <AnimatedSection className="py-24 bg-white">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-forest-900 mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-forest-900 mb-6 font-heading">
             Our <span className="text-brass-500">Process</span>
           </h2>
           <div className="w-16 h-px bg-brass-400 mx-auto mb-8"></div>
@@ -74,7 +119,7 @@ export default function PuppiesPage() {
       </AnimatedSection>
 
       {/* Process Steps */}
-      <section className="py-24 lg:py-32 bg-pearl">
+      <section className="py-24 bg-pearl">
         <div className="max-w-5xl mx-auto px-6">
           <div className="relative">
             {/* Vertical timeline line */}
@@ -86,7 +131,7 @@ export default function PuppiesPage() {
                 const isEven = idx % 2 === 0;
 
                 return (
-                  <AnimatedSection key={step.num} delay={idx * 0.1}>
+                  <AnimatedSection key={step.num} delay={idx * 100}>
                     <div className={`relative flex flex-col lg:flex-row items-start lg:items-center gap-8 ${isEven ? "lg:flex-row" : "lg:flex-row-reverse"}`}>
                       {/* Content */}
                       <div className={`flex-1 ${isEven ? "lg:text-right lg:pr-16" : "lg:text-left lg:pl-16"}`}>
@@ -113,37 +158,15 @@ export default function PuppiesPage() {
         </div>
       </section>
 
-      {/* Available Breeds */}
-      <AnimatedSection className="py-24 lg:py-32 bg-white">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <p className="text-brass-500 text-sm font-medium tracking-[0.2em] uppercase mb-4">Breeds We Work With</p>
-          <h2 className="text-3xl md:text-4xl font-bold text-forest-900 mb-12">
-            Currently Available <span className="text-brass-500">Breeds</span>
-          </h2>
-          <div className="flex flex-wrap justify-center gap-4 mb-12">
-            {breeds.map((breed) => (
-              <div
-                key={breed}
-                className="px-8 py-4 bg-oatmeal border border-taupe-200 rounded-2xl text-forest-900 font-medium text-lg hover:border-brass-300 transition-colors"
-              >
-                {breed}
-              </div>
-            ))}
-          </div>
-          <p className="text-taupe-500 text-sm max-w-lg mx-auto">
-            Availability changes frequently. Contact us to check current availability and discuss which breed is right for your family.
-          </p>
-        </div>
-      </AnimatedSection>
-
       {/* CTA */}
-      <section className="py-24 lg:py-32 bg-forest-900">
-        <AnimatedSection className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+      <section className="py-16 lg:py-24 bg-forest-900 relative overflow-hidden">
+        <div className="absolute inset-0 bg-noise opacity-30"></div>
+        <AnimatedSection className="max-w-4xl mx-auto px-6 text-center relative z-10">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 font-heading">
             <span className="text-white">Ready to Find Your </span>
             <span className="text-brass-500">New Companion?</span>
           </h2>
-          <p className="text-taupe-500 text-lg mb-10 max-w-2xl mx-auto font-light">
+          <p className="text-taupe-400 text-lg mb-10 max-w-2xl mx-auto font-light">
             Speak with our team to discuss breed suitability, availability, and to understand our process in more detail.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
@@ -151,7 +174,7 @@ export default function PuppiesPage() {
               href={getWhatsAppLink("Hi, I'm interested in getting a puppy. Could you tell me about current availability and your process?")}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-10 py-4 bg-brass-500 hover:bg-brass-600 text-forest-900 font-semibold rounded-full transition-all duration-300 hover:shadow-[0_4px_16px_rgba(214,163,101,0.3)]"
+              className="inline-flex items-center gap-2 px-10 py-4 bg-brass-500 hover:bg-brass-600 text-forest-900 font-semibold rounded-full transition-all duration-300 shadow-lg"
             >
               Enquire on WhatsApp
               <ArrowRight className="w-4 h-4" />

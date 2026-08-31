@@ -187,15 +187,7 @@ export default function Home() {
       </section>
 
       {/* 04: Final CTA */}
-      <section className="py-32 lg:py-48 bg-forest-900 relative overflow-hidden bg-noise">
-        {/* Decorative elements */}
-        <div className="absolute inset-0 opacity-20 pointer-events-none">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[1px] bg-gradient-to-r from-transparent via-brass-500 to-transparent"></div>
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-full w-[1px] bg-gradient-to-b from-transparent via-brass-500 to-transparent"></div>
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full border border-brass-500/20"></div>
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full border border-brass-500/30"></div>
-        </div>
-
+      <section className="py-16 lg:py-24 bg-forest-900 relative overflow-hidden bg-noise">
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
           <AnimatedSection animation="fade-up">
             <h2 className="text-5xl md:text-7xl font-bold mb-10 tracking-tight leading-tight">

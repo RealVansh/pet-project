@@ -122,7 +122,7 @@ export default function GroomingPage() {
             <div className="lg:col-span-7">
               <AnimatedSection>
                 <h2 className="text-3xl md:text-4xl font-bold text-forest-900 font-heading mb-4">Grooming Packages</h2>
-                <p className="text-taupe-600 mb-10 text-lg">Comprehensive care tailored to your pet's exact needs. *Prices vary by breed size.*</p>
+                <p className="text-taupe-600 mb-10 text-lg">Comprehensive care tailored to your pet's exact needs.</p>
                 
                 <div className="space-y-6">
                   {packages.map((pkg, idx) => (
