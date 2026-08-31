@@ -4,7 +4,7 @@ import AnimatedSection from "@/components/ui/AnimatedSection";
 import { getWhatsAppLink } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "Professional Pet Care in Chennai | Pet Grooming & Training",
+  title: "The Fur Stylist in Chennai | Pet Grooming & Training",
   description: "Exceptional care for your best friend. Professional grooming, training, and pet care services delivered by experienced professionals.",
 };
 

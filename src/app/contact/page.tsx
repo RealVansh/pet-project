@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
 import { AnimatedSection } from '@/components/ui/AnimatedSection';
-import { getWhatsAppLink } from '@/lib/utils';
 import { Phone, MapPin, Clock, MessageCircle } from 'lucide-react';
+import ContactForm from '@/components/ui/ContactForm';
 
 export const metadata: Metadata = {
-  title: 'Contact Us | Premium Pet Care',
-  description: 'Get in touch with us for premium pet care services, grooming, and training inquiries.',
+  title: 'Contact Us | The Fur Stylist',
+  description: 'Get in touch with us for premium door-step pet care services, grooming, and training inquiries.',
 };
 
 export default function ContactPage() {
@@ -19,7 +19,7 @@ export default function ContactPage() {
             Get In <span className="text-brass-500">Touch</span>
           </h1>
           <p className="text-taupe-500 text-lg max-w-2xl mx-auto">
-            We are here to assist you with any inquiries regarding our premium pet care services.
+            We are here to assist you with any inquiries regarding our premium doorstep pet care services.
           </p>
         </div>
       </section>
@@ -37,10 +37,10 @@ export default function ContactPage() {
                   <MessageCircle className="w-6 h-6 text-brass-500" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-forest-900 mb-2">WhatsApp</h3>
-                  <p className="text-taupe-600 mb-3">Fastest way to reach us for bookings and inquiries.</p>
-                  <a href={getWhatsAppLink("Hello! I have an inquiry.")} target="_blank" rel="noopener noreferrer" className="text-brass-600 font-semibold hover:text-brass-500 transition-colors">
-                    +91 99520 74007
+                  <h3 className="text-xl font-bold text-forest-900 mb-2">WhatsApp / Phone</h3>
+                  <p className="text-taupe-600 mb-3">Fastest way to reach us for bookings.</p>
+                  <a href="https://wa.me/919677555003" target="_blank" rel="noopener noreferrer" className="text-brass-600 font-semibold hover:text-brass-500 transition-colors block">
+                    +91 96775 55003
                   </a>
                 </div>
               </div>
@@ -49,13 +49,28 @@ export default function ContactPage() {
 
               <div className="flex items-start">
                 <div className="w-14 h-14 bg-white shadow-sm border border-taupe-200 rounded-full flex items-center justify-center flex-shrink-0 mr-6">
-                  <Phone className="w-6 h-6 text-brass-500" />
+                  <MessageCircle className="w-6 h-6 text-brass-500" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-forest-900 mb-2">Phone</h3>
-                  <p className="text-taupe-600 mb-3">Call us directly during working hours.</p>
-                  <a href="tel:+919952074007" className="text-forest-900 font-semibold hover:text-brass-500 transition-colors">
-                    +91 99520 74007
+                  <h3 className="text-xl font-bold text-forest-900 mb-2">Email</h3>
+                  <p className="text-taupe-600 mb-3">Drop us a line for detailed queries.</p>
+                  <a href="mailto:thefurstylist98@gmail.com" className="text-forest-900 font-semibold hover:text-brass-500 transition-colors">
+                    thefurstylist98@gmail.com
+                  </a>
+                </div>
+              </div>
+
+              <div className="w-full h-px bg-taupe-200"></div>
+
+              <div className="flex items-start">
+                <div className="w-14 h-14 bg-white shadow-sm border border-taupe-200 rounded-full flex items-center justify-center flex-shrink-0 mr-6">
+                  <MessageCircle className="w-6 h-6 text-brass-500" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-forest-900 mb-2">Instagram</h3>
+                  <p className="text-taupe-600 mb-3">Follow us for updates and cute pictures!</p>
+                  <a href="https://www.instagram.com/the.furstylist?igsi=cXp4MjY4bmIyajMy" target="_blank" rel="noopener noreferrer" className="text-forest-900 font-semibold hover:text-brass-500 transition-colors">
+                    @the.furstylist
                   </a>
                 </div>
               </div>
@@ -67,9 +82,8 @@ export default function ContactPage() {
                   <Clock className="w-6 h-6 text-brass-500" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-forest-900 mb-2">Business Hours</h3>
-                  <p className="text-taupe-600">Monday - Saturday: 9:00 AM - 7:00 PM</p>
-                  <p className="text-taupe-600">Sunday: Closed</p>
+                  <h3 className="text-xl font-bold text-forest-900 mb-2">Working Hours</h3>
+                  <p className="text-taupe-600">Everyday: 10:00 AM - 6:00 PM</p>
                 </div>
               </div>
 
@@ -81,48 +95,22 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-forest-900 mb-2">Location</h3>
-                  <p className="text-taupe-600">Premium Pet Services Studio<br/>Available by appointment.</p>
+                  <p className="text-taupe-600 leading-relaxed">
+                    We currently do not operate a physical office. We provide premium <strong>door-step services</strong> directly to your home.
+                  </p>
                 </div>
               </div>
             </AnimatedSection>
 
-            {/* Right: Simple Form / CTA */}
+            {/* Right: Dynamic WhatsApp Form */}
             <AnimatedSection delay={200} className="bg-white p-10 lg:p-14 rounded-3xl shadow-xl border border-taupe-200">
-              <h2 className="text-3xl font-bold text-forest-900 font-heading mb-8">Send an Enquiry</h2>
-              <p className="text-taupe-600 mb-10 leading-relaxed">
-                For the fastest response, we recommend sending us a message directly on WhatsApp with your specific requirements.
+              <h2 className="text-3xl font-bold text-forest-900 font-heading mb-4">Send an Enquiry</h2>
+              <p className="text-taupe-600 mb-8 leading-relaxed">
+                Fill out the details below and it will instantly prepare a WhatsApp message for our team to review!
               </p>
               
-              <div className="space-y-6">
-                <a 
-                  href={getWhatsAppLink("Hello! I'd like to book a grooming session.")}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-between w-full p-6 rounded-2xl border border-taupe-200 hover:border-brass-500 hover:bg-sage-50/50 transition-all group"
-                >
-                  <span className="font-semibold text-forest-900">Book Grooming</span>
-                  <span className="text-brass-500 group-hover:translate-x-1 transition-transform">→</span>
-                </a>
-                
-                <a 
-                  href={getWhatsAppLink("Hello! I'm interested in your training programs.")}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-between w-full p-6 rounded-2xl border border-taupe-200 hover:border-brass-500 hover:bg-sage-50/50 transition-all group"
-                >
-                  <span className="font-semibold text-forest-900">Enquire About Training</span>
-                  <span className="text-brass-500 group-hover:translate-x-1 transition-transform">→</span>
-                </a>
+              <ContactForm />
 
-                <a 
-                  href={getWhatsAppLink("Hello! I have a general inquiry.")}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center w-full py-5 rounded-full bg-forest-900 text-white font-semibold uppercase tracking-wider text-sm hover:bg-forest-800 transition-colors mt-8"
-                >
-                  Message on WhatsApp
-                </a>
-              </div>
             </AnimatedSection>
 
           </div>

@@ -6,7 +6,7 @@ import { getWhatsAppLink } from '@/lib/utils';
 
 export const metadata: Metadata = {
   title: 'About Us | Premium Pet Care Services',
-  description: 'Learn about our 5+ years of experience delivering professional pet care services including grooming, training, and walking.',
+  description: 'Learn about our 5+ years of experience delivering The Fur Stylist services including grooming, training, and walking.',
 };
 
 export default function AboutPage() {
@@ -17,7 +17,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-6 text-center">
           <p className="text-brass-500 text-sm font-medium tracking-[0.2em] uppercase mb-4">Our Story</p>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
-            About <span className="text-brass-500">Professional Pet Care</span>
+            About <span className="text-brass-500">The Fur Stylist</span>
           </h1>
           <p className="text-taupe-500 text-lg max-w-2xl mx-auto">
             Delivering exceptional care for your beloved companions with over 5 years of dedicated experience.
@@ -58,7 +58,7 @@ export default function AboutPage() {
               </div>
               <h3 className="text-2xl font-bold text-forest-900 mb-4 font-heading">5+ Years Experience</h3>
               <p className="text-taupe-600 leading-relaxed">
-                A proven track record of delivering reliable, professional pet care services that you can trust implicitly.
+                A proven track record of delivering reliable, The Fur Stylist services that you can trust implicitly.
               </p>
             </AnimatedSection>
 

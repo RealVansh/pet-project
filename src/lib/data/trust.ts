@@ -3,7 +3,7 @@ import { Award, Heart, Star, ShieldCheck } from "lucide-react";
 export const trustItems = [
   {
     title: "5+ Years Experience",
-    description: "Years of professional pet care.",
+    description: "Years of The Fur Stylist.",
     icon: Award,
   },
   {

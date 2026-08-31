@@ -19,7 +19,7 @@ import Footer from "@/components/layout/Footer";
 import FloatingWhatsApp from "@/components/layout/FloatingWhatsApp";
 
 export const metadata: Metadata = {
-  title: "Professional Pet Care | Premium Grooming & Training",
+  title: "The Fur Stylist | Premium Grooming & Training",
   description: "Professional pet grooming, dog training, walking, and pet sales by experienced professionals.",
 };
 

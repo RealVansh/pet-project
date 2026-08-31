@@ -28,7 +28,7 @@ export default function Footer() {
           <div className="md:col-span-5">
             <Link href="/" className="flex items-center gap-2 mb-6">
               <span className="font-heading text-2xl font-bold text-white tracking-tight">
-                Professional Pet Care
+                The Fur Stylist
               </span>
               <span className="w-1.5 h-1.5 rounded-full bg-brass-500"></span>
             </Link>
@@ -86,33 +86,51 @@ export default function Footer() {
             <ul className="space-y-4">
               <li>
                 <a
-                  href="tel:+919952074007"
+                  href="tel:+919677555003"
                   className="text-taupe-500 hover:text-white text-sm transition-colors duration-300"
                 >
-                  +91 99520 74007
+                  +91 96775 55003
                 </a>
               </li>
               <li>
                 <a
-                  href={getWhatsAppLink("Hi, I'd like to get in touch.")}
+                  href="mailto:thefurstylist98@gmail.com"
+                  className="text-taupe-500 hover:text-white text-sm transition-colors duration-300"
+                >
+                  Email Us
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.instagram.com/the.furstylist?igsi=cXp4MjY4bmIyajMy"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-taupe-500 hover:text-white text-sm transition-colors duration-300"
                 >
-                  WhatsApp Us
+                  Instagram
                 </a>
               </li>
-              <li className="text-taupe-500 text-sm">Chennai, India</li>
+              <li className="text-taupe-500 text-sm">Tambaram, Chennai (Door-step)</li>
             </ul>
           </div>
         </div>
 
         {/* Bottom */}
-        <div className="border-t border-forest-800 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-taupe-500 text-sm font-light">
-            © {new Date().getFullYear()} Professional Pet Care. All rights reserved.
+        <div className="border-t border-forest-800 pt-8 flex flex-col md:flex-row items-center justify-between gap-6">
+          <p className="text-taupe-500 text-sm font-light order-3 md:order-1">
+            © {new Date().getFullYear()} The Fur Stylist. All rights reserved.
           </p>
-          <div className="flex items-center gap-6 text-xs text-taupe-500 font-light">
+          
+          <div className="flex items-center gap-4 order-2 text-taupe-500">
+            <a href="https://www.instagram.com/the.furstylist?igsi=cXp4MjY4bmIyajMy" target="_blank" rel="noopener noreferrer" className="hover:text-brass-500 transition-colors" aria-label="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="https://www.facebook.com/share/1Efomb5y9s/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="hover:text-brass-500 transition-colors" aria-label="Facebook">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+            </a>
+          </div>
+
+          <div className="flex items-center gap-6 text-xs text-taupe-500 font-light order-1 md:order-3">
             <span>5+ Years Experience</span>
             <span className="w-1 h-1 rounded-full bg-brass-500"></span>
             <span>Professional Team</span>

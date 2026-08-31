@@ -1,87 +1,183 @@
 import type { Metadata } from 'next';
 import { AnimatedSection } from '@/components/ui/AnimatedSection';
+import { FAQAccordion } from '@/components/ui/FAQAccordion';
 import { getWhatsAppLink } from '@/lib/utils';
-import { Check } from 'lucide-react';
+import { Check, Scissors, ShieldCheck, Sparkles, Heart, Home, Bath, ArrowRight, Phone } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Pet Grooming | Premium Services',
-  description: 'Gentle, professional grooming services to keep your pet looking and feeling their absolute best.',
+  title: 'Doorstep Pet Grooming | The Fur Stylist',
+  description: 'Premium doorstep pet grooming services. Stress-free, professional care brought right to your home.',
 };
 
 export default function GroomingPage() {
-  const inclusions = [
-    'Deep Cleansing Bath & Conditioning',
-    'Breed-Specific Haircuts & Styling',
-    'Nail Trimming & Filing',
-    'Ear Cleaning & Plucking',
-    'Paw Pad & Sanitary Trim',
-    'Blow Dry & Brush Out'
+  const packages = [
+    {
+      name: 'Hygiene & Shower Package',
+      desc: 'The essential refresh for a clean, happy pet.',
+      includes: ['Deep cleansing bath', 'Professional blow-dry', 'Nail trimming & filing', 'Ear cleaning & plucking', 'Sanitary trim']
+    },
+    {
+      name: 'Hair Care Package',
+      desc: 'Perfect for maintaining healthy, tangle-free coats.',
+      includes: ['Everything in Hygiene Package', 'Deep coat conditioning', 'Thorough brush-out', 'De-matting treatment', 'Paw pad trim']
+    },
+    {
+      name: 'Tip to Toe Package',
+      desc: 'The ultimate full-body styling and spa session.',
+      includes: ['Everything in Hair Care', 'Full body haircut/styling', 'Breed-specific scissor work', 'Teeth wiping', 'Premium pet cologne']
+    },
+    {
+      name: 'Tick-Free Package',
+      desc: 'Targeted relief from pests and skin irritation.',
+      includes: ['Medicated anti-tick bath', 'Manual tick removal', 'Soothing skin treatment', 'Spot-on application (if requested)']
+    }
+  ];
+
+  const breedSpecialties = [
+    'Bichon Frise', 'Poodle', 'Chow Chow', 'Shih Tzu'
+  ];
+
+  const faqs = [
+    {
+      question: "Do I need to provide towels, shampoo, or a grooming table?",
+      answer: "No, we bring a complete professional grooming kit, including premium pet-safe shampoos, a portable table, and sterilized tools. All we need from you is access to a water point!"
+    },
+    {
+      question: "What if my pet is extremely anxious or aggressive?",
+      answer: "We specialize in nervous pets. Our patience-first approach means we go at your pet's pace. Because the grooming happens in their own home, travel anxiety is completely eliminated."
+    },
+    {
+      question: "How long does a session take?",
+      answer: "Sessions typically range from 45 minutes to 2 hours, depending on your pet's breed, coat condition, and the specific package you select."
+    }
   ];
 
   return (
     <main className="min-h-screen bg-pearl">
       {/* Page Hero Banner */}
-      <section className="bg-forest-900 pt-32 pb-16 lg:pt-40 lg:pb-20">
-        <div className="max-w-7xl mx-auto px-6 text-center">
+      <section className="bg-forest-900 pt-32 pb-16 lg:pt-40 lg:pb-20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-noise opacity-30"></div>
+        <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
           <p className="text-brass-500 text-sm font-medium tracking-[0.2em] uppercase mb-4">Spa & Styling</p>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
-            Pet <span className="text-brass-500">Grooming</span>
+            Doorstep Pet <span className="text-brass-500">Grooming</span>
           </h1>
           <p className="text-taupe-500 text-lg max-w-2xl mx-auto">
-            Gentle, professional care for a flawless finish.
+            Gentle, professional care for a flawless finish — brought right to your home. No cages, no travel stress.
           </p>
         </div>
       </section>
 
-      {/* Philosophy Section */}
-      <AnimatedSection className="py-24 lg:py-32 bg-white">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-forest-900 mb-8 font-heading">
-            A <span className="text-brass-500">Patience-First</span> Approach
-          </h2>
-          <div className="w-16 h-px bg-brass-400 mx-auto mb-8"></div>
-          <p className="text-xl leading-relaxed text-taupe-600 mb-6">
-            Grooming shouldn't be stressful. We take our time with every pet, ensuring they feel calm and comfortable throughout the entire process. Our trained professionals handle even the most nervous pets with care and expertise.
-          </p>
+      {/* Hygiene & Safety Trust Strip */}
+      <div className="bg-white border-b border-taupe-200 py-6 shadow-sm">
+        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-center items-center gap-6 md:gap-12 divide-y md:divide-y-0 md:divide-x divide-taupe-200 text-center md:text-left">
+          <div className="flex items-center gap-3 pt-4 md:pt-0 pl-0 md:pl-6 first:pl-0 first:pt-0 border-none">
+            <Sparkles className="w-5 h-5 text-brass-500 flex-shrink-0" />
+            <span className="text-forest-900 font-medium text-sm">Premium Pet-Safe Products</span>
+          </div>
+          <div className="flex items-center gap-3 pt-4 md:pt-0 md:pl-12">
+            <ShieldCheck className="w-5 h-5 text-brass-500 flex-shrink-0" />
+            <span className="text-forest-900 font-medium text-sm">Tools Sanitized Between Pets</span>
+          </div>
+          <div className="flex items-center gap-3 pt-4 md:pt-0 md:pl-12">
+            <Heart className="w-5 h-5 text-brass-500 flex-shrink-0" />
+            <span className="text-forest-900 font-medium text-sm">100% Sedation-Free</span>
+          </div>
         </div>
-      </AnimatedSection>
+      </div>
 
-      {/* Offerings Section */}
-      <section className="py-24 lg:py-32 bg-pearl">
-        <div className="max-w-5xl mx-auto px-6">
-          <AnimatedSection className="bg-white rounded-3xl p-10 lg:p-16 shadow-lg border border-taupe-200 flex flex-col md:flex-row gap-12 items-center">
-            <div className="md:w-1/2">
-              <h3 className="text-3xl font-bold text-forest-900 mb-6 font-heading">The Full Signature Groom</h3>
-              <p className="text-taupe-600 mb-8 leading-relaxed text-lg">
-                Our comprehensive grooming package covers everything your pet needs to look and feel pristine, using only premium, pet-safe products.
-              </p>
-              <ul className="space-y-4">
-                {inclusions.map((item, idx) => (
-                  <li key={idx} className="flex items-center text-stone-700">
-                    <div className="w-6 h-6 rounded-full bg-sage-50 flex items-center justify-center mr-4 flex-shrink-0">
-                      <Check className="w-3.5 h-3.5 text-brass-600" />
-                    </div>
-                    <span className="font-medium">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="md:w-1/2 flex justify-center">
-               <div className="bg-forest-900 rounded-3xl p-10 text-center w-full max-w-sm relative overflow-hidden group hover:shadow-2xl transition-shadow duration-300">
-                 <div className="absolute inset-0 bg-brass-500 opacity-0 group-hover:opacity-10 transition-opacity duration-500"></div>
-                 <h4 className="text-brass-400 font-bold tracking-widest uppercase text-sm mb-4">Book an Appointment</h4>
-                 <p className="text-white text-xl font-heading mb-8">Give your pet the spa day they deserve.</p>
-                 <a 
-                    href={getWhatsAppLink("Hello! I'd like to book a grooming appointment.")}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center w-full px-6 py-4 text-sm font-semibold uppercase tracking-wider text-forest-900 bg-brass-400 hover:bg-brass-300 rounded-full transition-all duration-300"
-                  >
-                    Book via WhatsApp
-                  </a>
-               </div>
-            </div>
+      {/* How It Works Timeline */}
+      <section className="py-24 bg-oatmeal">
+        <div className="max-w-6xl mx-auto px-6">
+          <AnimatedSection className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-forest-900 font-heading mb-4">How Doorstep Grooming Works</h2>
+            <p className="text-taupe-600 max-w-2xl mx-auto text-lg">A seamless, stress-free experience from start to finish.</p>
           </AnimatedSection>
+
+          <div className="grid md:grid-cols-4 gap-8">
+            {[
+              { icon: <Phone className="w-6 h-6"/>, title: "1. Book & Brief", desc: "Share your pet's breed, temperament, and any skin concerns via WhatsApp." },
+              { icon: <Home className="w-6 h-6"/>, title: "2. We Arrive", desc: "Our groomer arrives equipped. All we need is access to a water point." },
+              { icon: <Bath className="w-6 h-6"/>, title: "3. The Spa", desc: "A calm, patience-first grooming session in your pet's comfort zone." },
+              { icon: <Sparkles className="w-6 h-6"/>, title: "4. Clean Exit", desc: "We clean up completely. Your home stays spotless, your pet looks gorgeous." }
+            ].map((step, i) => (
+              <AnimatedSection key={i} delay={i * 100} className="bg-white p-8 rounded-3xl border border-taupe-200 text-center relative hover:shadow-lg transition-shadow">
+                <div className="w-14 h-14 bg-sage-50 rounded-full flex items-center justify-center mx-auto mb-6 text-brass-600">
+                  {step.icon}
+                </div>
+                <h3 className="text-xl font-bold text-forest-900 mb-3">{step.title}</h3>
+                <p className="text-taupe-600 text-sm leading-relaxed">{step.desc}</p>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Packages Section */}
+      <section className="py-24 lg:py-32 bg-pearl">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid lg:grid-cols-12 gap-16 items-start">
+            
+            {/* Packages List */}
+            <div className="lg:col-span-7">
+              <AnimatedSection>
+                <h2 className="text-3xl md:text-4xl font-bold text-forest-900 font-heading mb-4">Grooming Packages</h2>
+                <p className="text-taupe-600 mb-10 text-lg">Comprehensive care tailored to your pet's exact needs. *Prices vary by breed size.*</p>
+                
+                <div className="space-y-6">
+                  {packages.map((pkg, idx) => (
+                    <div key={idx} className="bg-white rounded-3xl p-8 border border-taupe-200 shadow-sm hover:border-brass-400 transition-colors">
+                      <h3 className="text-2xl font-bold text-forest-900 mb-2 font-heading">{pkg.name}</h3>
+                      <p className="text-taupe-500 mb-6">{pkg.desc}</p>
+                      <ul className="grid sm:grid-cols-2 gap-3">
+                        {pkg.includes.map((item, i) => (
+                          <li key={i} className="flex items-start text-taupe-600 text-sm">
+                            <Check className="w-4 h-4 text-brass-500 mr-2 flex-shrink-0 mt-0.5" />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              </AnimatedSection>
+            </div>
+
+            {/* Sidebar (Breed Specialties & CTA) */}
+            <div className="lg:col-span-5 space-y-8 sticky top-32">
+              <AnimatedSection className="bg-forest-900 rounded-3xl p-10 shadow-xl border border-forest-800 text-white">
+                <div className="w-12 h-12 rounded-xl bg-forest-800 flex items-center justify-center mb-6">
+                  <Scissors className="w-6 h-6 text-brass-400" />
+                </div>
+                <h3 className="text-2xl font-bold mb-3 font-heading">Breed-Specific Styling</h3>
+                <p className="text-taupe-200 mb-8 leading-relaxed">
+                  Specialized haircuts requiring expert scissor work and breed knowledge.
+                </p>
+                <div className="grid grid-cols-2 gap-3 mb-10">
+                  {breedSpecialties.map((item, idx) => (
+                    <div key={idx} className="bg-forest-800 rounded-xl p-3 text-center text-sm font-medium border border-forest-700">
+                      {item}
+                    </div>
+                  ))}
+                </div>
+                <a 
+                  href={getWhatsAppLink("Hello! I'd like to book a doorstep grooming appointment. Can I get a quote?")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 w-full px-6 py-4 text-sm font-semibold uppercase tracking-wider text-forest-900 bg-brass-400 hover:bg-brass-300 rounded-full transition-all duration-300"
+                >
+                  Book an Appointment <ArrowRight size={16} />
+                </a>
+              </AnimatedSection>
+              
+              {/* FAQs */}
+              <AnimatedSection delay={200}>
+                <h3 className="text-2xl font-bold text-forest-900 font-heading mb-6">Common Questions</h3>
+                <FAQAccordion items={faqs} />
+              </AnimatedSection>
+            </div>
+
+          </div>
         </div>
       </section>
     </main>

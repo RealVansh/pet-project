@@ -4,7 +4,7 @@ import { getWhatsAppLink } from "@/lib/utils";
 import { Search, ShieldCheck, Stethoscope, Handshake, HeartHandshake, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Pet Sales | How We Source & Deliver Puppies | Professional Pet Care",
+  title: "Pet Sales | How We Source & Deliver Puppies | The Fur Stylist",
   description: "Learn about our transparent, trust-first process for sourcing healthy puppies and ensuring a smooth handover to your family.",
 };
 
@@ -157,7 +157,7 @@ export default function PuppiesPage() {
               <ArrowRight className="w-4 h-4" />
             </a>
             <a
-              href="tel:+919952074007"
+              href="tel:+919677555003"
               className="px-10 py-4 border border-taupe-600 hover:border-brass-500 text-white hover:text-brass-500 font-medium rounded-full transition-all duration-300"
             >
               Call Us
