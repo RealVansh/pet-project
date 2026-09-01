@@ -4,7 +4,7 @@ import { getWhatsAppLink } from "@/lib/utils";
 import { Search, ShieldCheck, Stethoscope, Handshake, HeartHandshake, ArrowRight, Info } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Pet Sales | Available Breeds | The Fur Stylist",
+  title: "Pet Sales | Available Breeds | Bark & Bond",
   description: "Discover our currently available healthy puppies. We ensure a transparent, trust-first process from sourcing to handover.",
 };
 

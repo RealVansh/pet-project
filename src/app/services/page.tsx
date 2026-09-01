@@ -72,20 +72,20 @@ export default function ServicesPage() {
               return (
                 <AnimatedSection delay={idx * 100} key={service.num}>
                   <Link href={service.href} className="block group h-full">
-                    <div className="bg-white rounded-2xl p-10 lg:p-14 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border border-taupe-200 border-t-4 hover:border-t-brass-500 h-full relative overflow-hidden">
+                    <div className="bg-white rounded-2xl p-10 lg:p-14 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-[4px] border-taupe-100 border-t-brass-500 hover:border-brass-500 h-full relative overflow-hidden">
                       <div className="absolute top-8 right-10 text-6xl font-black text-oatmeal group-hover:text-taupe-200 transition-colors pointer-events-none">
                         {service.num}
                       </div>
-                      <div className="w-16 h-16 bg-oatmeal rounded-2xl flex items-center justify-center mb-8 group-hover:bg-forest-900 transition-colors">
-                        <Icon className="w-8 h-8 text-forest-900 group-hover:text-brass-400 transition-colors" />
+                      <div className="w-16 h-16 bg-forest-900 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-brass-500 transition-colors">
+                        <Icon className="w-8 h-8 text-brass-400 group-hover:text-white transition-colors" />
                       </div>
-                      <h3 className="text-3xl font-bold text-forest-900 mb-4 font-heading group-hover:text-brass-600 transition-colors">
+                      <h3 className="text-3xl font-bold text-brass-600 mb-4 font-heading group-hover:text-forest-900 transition-colors">
                         {service.title}
                       </h3>
                       <p className="text-taupe-600 text-lg leading-relaxed mb-8">
                         {service.desc}
                       </p>
-                      <div className="flex items-center text-sm font-semibold uppercase tracking-wider text-forest-900 group-hover:text-brass-500 transition-colors">
+                      <div className="flex items-center text-sm font-semibold uppercase tracking-wider text-brass-500 group-hover:text-forest-900 transition-colors">
                         Explore Service <span className="ml-2 group-hover:translate-x-2 transition-transform">→</span>
                       </div>
                     </div>

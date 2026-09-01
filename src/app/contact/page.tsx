@@ -4,7 +4,7 @@ import { Phone, MapPin, Clock, MessageCircle } from 'lucide-react';
 import ContactForm from '@/components/ui/ContactForm';
 
 export const metadata: Metadata = {
-  title: 'Contact Us | The Fur Stylist',
+  title: 'Contact Us | Bark & Bond',
   description: 'Get in touch with us for premium door-step pet care services, grooming, and training inquiries.',
 };
 

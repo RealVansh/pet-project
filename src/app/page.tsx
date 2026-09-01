@@ -4,7 +4,7 @@ import AnimatedSection from "@/components/ui/AnimatedSection";
 import { getWhatsAppLink } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "The Fur Stylist in Chennai | Pet Grooming & Training",
+  title: "Bark & Bond in Chennai | Pet Grooming & Training",
   description: "Exceptional care for your best friend. Professional grooming, training, and pet care services delivered by experienced professionals.",
 };
 
@@ -22,8 +22,10 @@ export default function Home() {
               <div className="h-px w-24 bg-gradient-to-r from-transparent via-brass-500 to-transparent"></div>
             </div>
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 tracking-tight leading-[1.1]">
-              <span className="block font-light text-taupe-200 text-3xl md:text-5xl lg:text-6xl mb-2">The Standard of</span>
-              <span className="text-brass-500 block mb-4">Exceptional Care.</span>
+              <span className="block font-light text-taupe-200 text-3xl md:text-5xl lg:text-6xl mb-2">Welcome to</span>
+              <span className="gradient-text-gold block mb-4 font-cormorant uppercase tracking-[0.02em] font-bold py-2">
+                BARK <span className="text-[0.85em] mx-[0.3em]">&amp;</span> BOND
+              </span>
             </h1>
           </AnimatedSection>
           
@@ -50,7 +52,7 @@ export default function Home() {
         </div>
         
         {/* Scroll Indicator */}
-        <div className="absolute bottom-24 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce opacity-70">
+        <div className="absolute bottom-20 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce opacity-70">
           <span className="text-xs text-brass-500 tracking-widest uppercase">Scroll</span>
           <ChevronDown className="text-brass-500 w-5 h-5" />
         </div>
@@ -190,10 +192,12 @@ export default function Home() {
       <section className="py-16 lg:py-24 bg-forest-900 relative overflow-hidden bg-noise">
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
           <AnimatedSection animation="fade-up">
-            <h2 className="text-5xl md:text-7xl font-bold mb-10 tracking-tight leading-tight">
-              <span className="text-white block mb-2 font-light">Your Pet Deserves</span>
-              <span className="text-brass-500 block">The Absolute Best.</span>
-            </h2>
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 tracking-tight leading-tight">
+              <span className="text-white block mb-2 font-light text-4xl md:text-5xl">Welcome to</span>
+              <span className="gradient-text-gold block font-cormorant uppercase tracking-[0.02em] font-bold py-2">
+                BARK <span className="text-[0.85em] mx-[0.3em]">&amp;</span> BOND
+              </span>
+            </h1>
             <p className="text-xl text-taupe-500 mb-14 font-light max-w-2xl mx-auto">
               Join the family of pet owners who trust us with their companions' well-being and happiness.
             </p>

@@ -31,7 +31,7 @@ export default function ContactForm() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    let text = `Hello The Fur Stylist! I would like to inquire about your door-step services.\n\n`;
+    let text = `Hello Bark & Bond! I would like to inquire about your door-step services.\n\n`;
     if (formData.name) text += `*My Name:* ${formData.name}\n`;
     if (formData.petDetails) text += `*Pet Details:* ${formData.petDetails}\n`;
     if (formData.services.length > 0) {

@@ -47,16 +47,23 @@ export default function Navbar() {
       )}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        {/* Logo */}
-        <Link href="/" className="flex items-center group">
+        {/* Logo & Brand Name */}
+        <Link href="/" className="flex items-center gap-3 md:gap-4 group">
           <Image 
             src="/logo backgroundless.png" 
-            alt="The Fur Stylist" 
-            width={120} 
-            height={32} 
-            className="h-8 md:h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+            alt="Bark & Bond Icon" 
+            width={50} 
+            height={46} 
+            className="h-[38px] md:h-[46px] w-auto object-contain transition-transform duration-300 group-hover:scale-105"
             priority
           />
+          <span className={cn(
+            "font-cormorant font-medium uppercase tracking-[0.02em] leading-none transition-colors duration-300 flex items-center pt-1",
+            "text-[24px] md:text-[28px]",
+            isDark ? "text-white" : "text-[#123D32]"
+          )}>
+            BARK <span className="text-[0.85em] mx-[0.4em] font-medium">&amp;</span> BOND
+          </span>
         </Link>
 
         {/* Desktop Nav */}

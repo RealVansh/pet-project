@@ -5,7 +5,7 @@ import { getWhatsAppLink } from '@/lib/utils';
 import { Check, Scissors, ShieldCheck, Sparkles, Heart, Home, Bath, ArrowRight, Phone } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Doorstep Pet Grooming | The Fur Stylist',
+  title: 'Doorstep Pet Grooming | Bark & Bond',
   description: 'Premium doorstep pet grooming services. Stress-free, professional care brought right to your home.',
 };
 

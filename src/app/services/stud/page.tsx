@@ -4,7 +4,7 @@ import { getWhatsAppLink } from '@/lib/utils';
 import { ShieldCheck, Info } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Stud Services | The Fur Stylist',
+  title: 'Stud Services | Bark & Bond',
   description: 'Connect with top-tier pedigrees for responsible and healthy breeding. All our studs are KCI registered.',
 };
 

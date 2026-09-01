@@ -5,7 +5,7 @@ import { getWhatsAppLink } from '@/lib/utils';
 import { Check, Clock, ShieldCheck, ArrowRight, Brain, Target, User, HeartHandshake } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Dog Training | The Fur Stylist',
+  title: 'Dog Training | Bark & Bond',
   description: 'Professional obedience and behavioral training for dogs of all ages and breeds.',
 };
 

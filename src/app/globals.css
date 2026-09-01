@@ -26,6 +26,7 @@
 
   --font-sans: var(--font-inter);
   --font-heading: var(--font-outfit);
+  --font-cormorant: var(--font-cormorant);
 }
 
 @layer base {
@@ -65,4 +66,29 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+/* --- Glowing / Shifting Gradient Text --- */
+.gradient-text {
+  background: linear-gradient(135deg, #1e293b, #e2be8e, #c68645, #1e293b);
+  background-size: 300% 300%;
+  animation: gradient-move 6s ease-in-out infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-gold {
+  background: linear-gradient(135deg, #e2be8e, #c68645, #ecd5b4, #e2be8e);
+  background-size: 300% 300%;
+  animation: gradient-move 6s ease-in-out infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@keyframes gradient-move {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }

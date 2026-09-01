@@ -27,14 +27,17 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-20">
           {/* Brand */}
           <div className="md:col-span-5">
-            <Link href="/" className="inline-block mb-6 group">
+            <Link href="/" className="inline-flex flex-col items-start gap-4 mb-8 group">
               <Image 
                 src="/logo backgroundless.png" 
-                alt="The Fur Stylist" 
-                width={140} 
-                height={40} 
-                className="h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                alt="Bark & Bond Icon" 
+                width={80} 
+                height={64} 
+                className="h-14 md:h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
               />
+              <span className="font-cormorant font-medium uppercase tracking-[0.02em] leading-none text-white text-[28px] md:text-[32px] transition-colors group-hover:text-brass-300">
+                BARK <span className="text-[0.85em] mx-[0.4em] font-medium">&amp;</span> BOND
+              </span>
             </Link>
             <p className="text-taupe-500 text-base leading-relaxed mb-8 max-w-md font-light">
               Exceptional care for your best friend. Professional grooming, training, and pet care delivered by an experienced team with over 5 years of dedication.
@@ -122,7 +125,7 @@ export default function Footer() {
         {/* Bottom */}
         <div className="border-t border-forest-800 pt-8 flex flex-col md:flex-row items-center justify-between gap-6">
           <p className="text-taupe-500 text-sm font-light order-3 md:order-1">
-            © {new Date().getFullYear()} The Fur Stylist. All rights reserved.
+            © {new Date().getFullYear()} Bark & Bond. All rights reserved.
           </p>
           
           <div className="flex items-center gap-4 order-2 text-taupe-500">
