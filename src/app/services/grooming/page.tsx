@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { AnimatedSection } from '@/components/ui/AnimatedSection';
 import { FAQAccordion } from '@/components/ui/FAQAccordion';
+import PackageSelector from '@/components/ui/PackageSelector';
 import { getWhatsAppLink } from '@/lib/utils';
 import { Check, Scissors, ShieldCheck, Sparkles, Heart, Home, Bath, ArrowRight, Phone } from 'lucide-react';
 
@@ -14,7 +15,7 @@ export default function GroomingPage() {
     {
       name: 'Hygiene & Shower Package',
       desc: 'The essential refresh for a clean, happy pet.',
-      includes: ['Deep cleansing bath', 'Professional blow-dry', 'Nail trimming & filing', 'Ear cleaning & plucking', 'Sanitary trim']
+      includes: ['Deep cleansing bath', 'Professional blow-dry', 'Nail trimming & filing', 'Ear cleaning & hair removal', 'Sanitary trim']
     },
     {
       name: 'Hair Care Package',
@@ -86,6 +87,65 @@ export default function GroomingPage() {
         </div>
       </div>
 
+      {/* Packages Section */}
+      <section className="py-24 lg:py-32 bg-pearl">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid lg:grid-cols-12 gap-16 items-start">
+            
+            {/* Packages List */}
+            <div className="lg:col-span-7">
+              <AnimatedSection>
+                <h2 className="text-3xl md:text-4xl font-bold text-forest-900 font-heading mb-4">Grooming Packages</h2>
+                <p className="text-taupe-600 mb-10 text-lg">Comprehensive care tailored to your pet's exact needs.</p>
+                
+                <div className="space-y-6">
+                  {packages.map((pkg, idx) => (
+                    <div key={idx} className="bg-white rounded-3xl p-8 border border-taupe-200 shadow-sm hover:border-brass-400 transition-colors">
+                      <h3 className="text-2xl font-bold text-forest-900 mb-2 font-heading">{pkg.name}</h3>
+                      <p className="text-taupe-500 mb-6">{pkg.desc}</p>
+                      <ul className="grid sm:grid-cols-2 gap-3 mb-8">
+                        {pkg.includes.map((item, i) => (
+                          <li key={i} className="flex items-start text-taupe-600 text-sm">
+                            <Check className="w-4 h-4 text-brass-500 mr-2 flex-shrink-0 mt-0.5" />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                      <a
+                        href={getWhatsAppLink(`Hi! I'm interested in the ${pkg.name}. Can I get a quote?`)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-sm font-semibold text-brass-600 hover:text-forest-900 transition-colors"
+                      >
+                        Book This Package <ArrowRight size={14} />
+                      </a>
+                    </div>
+                  ))}
+                </div>
+              </AnimatedSection>
+            </div>
+
+            {/* Sidebar (CTA & FAQs) */}
+            <div className="lg:col-span-5 space-y-8 sticky top-32">
+              <AnimatedSection className="bg-forest-900 rounded-3xl p-10 shadow-xl border border-forest-800 text-white">
+                <h3 className="text-2xl font-bold mb-2 font-heading text-white">Ready to Book?</h3>
+                <p className="text-taupe-200 mb-6 leading-relaxed text-sm">
+                  Select your package and we&apos;ll open WhatsApp with your choice pre-filled.
+                </p>
+                <PackageSelector />
+              </AnimatedSection>
+              
+              {/* FAQs */}
+              <AnimatedSection delay={200}>
+                <h3 className="text-2xl font-bold text-forest-900 font-heading mb-6">Common Questions</h3>
+                <FAQAccordion items={faqs} />
+              </AnimatedSection>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       {/* How It Works Timeline */}
       <section className="py-24 bg-oatmeal">
         <div className="max-w-6xl mx-auto px-6">
@@ -109,74 +169,6 @@ export default function GroomingPage() {
                 <p className="text-taupe-600 text-sm leading-relaxed">{step.desc}</p>
               </AnimatedSection>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Packages Section */}
-      <section className="py-24 lg:py-32 bg-pearl">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid lg:grid-cols-12 gap-16 items-start">
-            
-            {/* Packages List */}
-            <div className="lg:col-span-7">
-              <AnimatedSection>
-                <h2 className="text-3xl md:text-4xl font-bold text-forest-900 font-heading mb-4">Grooming Packages</h2>
-                <p className="text-taupe-600 mb-10 text-lg">Comprehensive care tailored to your pet's exact needs.</p>
-                
-                <div className="space-y-6">
-                  {packages.map((pkg, idx) => (
-                    <div key={idx} className="bg-white rounded-3xl p-8 border border-taupe-200 shadow-sm hover:border-brass-400 transition-colors">
-                      <h3 className="text-2xl font-bold text-forest-900 mb-2 font-heading">{pkg.name}</h3>
-                      <p className="text-taupe-500 mb-6">{pkg.desc}</p>
-                      <ul className="grid sm:grid-cols-2 gap-3">
-                        {pkg.includes.map((item, i) => (
-                          <li key={i} className="flex items-start text-taupe-600 text-sm">
-                            <Check className="w-4 h-4 text-brass-500 mr-2 flex-shrink-0 mt-0.5" />
-                            <span>{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
-                </div>
-              </AnimatedSection>
-            </div>
-
-            {/* Sidebar (Breed Specialties & CTA) */}
-            <div className="lg:col-span-5 space-y-8 sticky top-32">
-              <AnimatedSection className="bg-forest-900 rounded-3xl p-10 shadow-xl border border-forest-800 text-white">
-                <div className="w-12 h-12 rounded-xl bg-forest-800 flex items-center justify-center mb-6">
-                  <Scissors className="w-6 h-6 text-brass-400" />
-                </div>
-                <h3 className="text-2xl font-bold mb-3 font-heading">Breed-Specific Styling</h3>
-                <p className="text-taupe-200 mb-8 leading-relaxed">
-                  Specialized haircuts requiring expert scissor work and breed knowledge.
-                </p>
-                <div className="grid grid-cols-2 gap-3 mb-10">
-                  {breedSpecialties.map((item, idx) => (
-                    <div key={idx} className="bg-forest-800 rounded-xl p-3 text-center text-sm font-medium border border-forest-700">
-                      {item}
-                    </div>
-                  ))}
-                </div>
-                <a 
-                  href={getWhatsAppLink("Hello! I'd like to book a doorstep grooming appointment. Can I get a quote?")}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 w-full px-6 py-4 text-sm font-semibold uppercase tracking-wider text-forest-900 bg-brass-400 hover:bg-brass-300 rounded-full transition-all duration-300"
-                >
-                  Book an Appointment <ArrowRight size={16} />
-                </a>
-              </AnimatedSection>
-              
-              {/* FAQs */}
-              <AnimatedSection delay={200}>
-                <h3 className="text-2xl font-bold text-forest-900 font-heading mb-6">Common Questions</h3>
-                <FAQAccordion items={faqs} />
-              </AnimatedSection>
-            </div>
-
           </div>
         </div>
       </section>

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { AnimatedSection } from '@/components/ui/AnimatedSection';
-import { Scissors, GraduationCap, Footprints, Dog, Heart } from 'lucide-react';
+import { Scissors, GraduationCap, PawPrint, Dog, Heart } from 'lucide-react';
 import { getWhatsAppLink } from '@/lib/utils';
 
 export const metadata: Metadata = {
@@ -36,7 +36,7 @@ export default function ServicesPage() {
       num: '04',
       title: 'Pet Walking',
       desc: 'Reliable, energetic walks ensuring your pet stays active and healthy.',
-      icon: Footprints,
+      icon: PawPrint,
       href: '/services/walking',
     },
     {

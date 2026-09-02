@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { Scissors, GraduationCap, Footprints, Heart, Shield, ChevronDown, ArrowRight } from "lucide-react";
+import { Scissors, GraduationCap, PawPrint, Heart, Shield, ChevronDown, ArrowRight } from "lucide-react";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import { getWhatsAppLink } from "@/lib/utils";
 
@@ -71,7 +71,7 @@ export default function Home() {
             </div>
             <div className="hidden sm:block w-px h-6 bg-forest-700"></div>
             <div className="flex items-center gap-3">
-              <Footprints className="w-5 h-5 text-brass-500" />
+              <PawPrint className="w-5 h-5 text-brass-500" />
               <span>Premium Facilities</span>
             </div>
           </div>
@@ -133,7 +133,7 @@ export default function Home() {
               {
                 title: "Walking",
                 desc: "Structured, enriching walks designed around your pet's unique energy levels.",
-                icon: Footprints,
+                icon: PawPrint,
                 link: "/services/walking"
               }
             ].map((service, idx) => (

@@ -35,17 +35,29 @@ export default function Navbar() {
   const isHome = pathname === "/";
   const isDark = isHome && !isScrolled;
 
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isMobileMenuOpen]);
+
   return (
-    <header
-      className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
-        isDark
-          ? "bg-transparent py-5"
-          : isScrolled
-            ? "bg-white/90 backdrop-blur-xl py-3 shadow-[0_1px_3px_rgba(0,0,0,0.08)]"
-            : "bg-white py-4 border-b border-taupe-200"
-      )}
-    >
+    <>
+      <header
+        className={cn(
+          "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
+          isDark && !isMobileMenuOpen
+            ? "bg-transparent py-5"
+            : (isScrolled || isMobileMenuOpen)
+              ? "bg-white/95 backdrop-blur-xl py-3 shadow-[0_1px_3px_rgba(0,0,0,0.08)]"
+              : "bg-white py-4 border-b border-taupe-200"
+        )}
+      >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Logo & Brand Name */}
         <Link href="/" className="flex items-center gap-3 md:gap-4 group">
@@ -60,7 +72,7 @@ export default function Navbar() {
           <span className={cn(
             "font-cormorant font-medium uppercase tracking-[0.02em] leading-none transition-colors duration-300 flex items-center pt-1",
             "text-[24px] md:text-[28px]",
-            isDark ? "text-white" : "text-[#123D32]"
+            (isDark && !isMobileMenuOpen) ? "text-white" : "text-[#123D32]"
           )}>
             BARK <span className="text-[0.85em] mx-[0.4em] font-medium">&amp;</span> BOND
           </span>
@@ -75,8 +87,8 @@ export default function Navbar() {
               className={cn(
                 "relative px-4 py-2 text-sm font-medium transition-colors duration-300",
                 isActive(link.href)
-                  ? isDark ? "text-white" : "text-forest-900"
-                  : isDark ? "text-taupe-200 hover:text-white" : "text-taupe-500 hover:text-forest-900"
+                  ? (isDark && !isMobileMenuOpen) ? "text-white" : "text-forest-900"
+                  : (isDark && !isMobileMenuOpen) ? "text-taupe-200 hover:text-white" : "text-taupe-500 hover:text-forest-900"
               )}
             >
               {link.label}
@@ -93,10 +105,10 @@ export default function Navbar() {
           
           {/* Social Icons */}
           <div className="flex items-center gap-3 mr-2">
-            <a href="https://www.instagram.com/the.furstylist?igsi=cXp4MjY4bmIyajMy" target="_blank" rel="noopener noreferrer" className={cn("transition-colors hover:text-brass-500", isDark ? "text-white" : "text-forest-900")} aria-label="Instagram">
+            <a href="https://www.instagram.com/the.furstylist?igsi=cXp4MjY4bmIyajMy" target="_blank" rel="noopener noreferrer" className={cn("transition-colors hover:text-brass-500", (isDark && !isMobileMenuOpen) ? "text-white" : "text-forest-900")} aria-label="Instagram">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
             </a>
-            <a href="https://www.facebook.com/share/1Efomb5y9s/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className={cn("transition-colors hover:text-brass-500", isDark ? "text-white" : "text-forest-900")} aria-label="Facebook">
+            <a href="https://www.facebook.com/share/1Efomb5y9s/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className={cn("transition-colors hover:text-brass-500", (isDark && !isMobileMenuOpen) ? "text-white" : "text-forest-900")} aria-label="Facebook">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
             </a>
           </div>
@@ -114,17 +126,18 @@ export default function Navbar() {
 
         {/* Mobile Menu Toggle */}
         <button
-          className={cn("lg:hidden p-2 -mr-2", isDark ? "text-white" : "text-forest-900")}
+          className={cn("lg:hidden p-2 -mr-2", (isDark && !isMobileMenuOpen) ? "text-white" : "text-forest-900")}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle Menu"
         >
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
+    </header>
 
       {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden fixed inset-0 top-[56px] bg-white z-40 flex flex-col">
+        <div className="lg:hidden fixed inset-0 top-[72px] bg-white z-40 flex flex-col h-[calc(100dvh-72px)] overflow-y-auto">
           <nav className="flex flex-col px-6 pt-8">
             {navLinks.map((link) => (
               <Link
@@ -173,6 +186,6 @@ export default function Navbar() {
           </div>
         </div>
       )}
-    </header>
+    </>
   );
 }
